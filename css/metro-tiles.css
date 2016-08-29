@@ -5,10 +5,8 @@
 	transition:all 0.08s ease-in;
 	margin:5px;
 	border:1px solid rgba(150, 150, 150, 0.2);
-    /* position: absolute; */
-	/* transform-origin:center center */
-    /* -webkit-transform-style: preserve-3d; /* Chrome, Safari, Opera */ */
-    /* transform-style: preserve-3d; /* Chrome, Safari, Opera */ */
+	overflow:hidden;
+	position:relative;
 }
 .tile-small{
 	width:71px;
@@ -27,6 +25,48 @@
 	height:310px;
 }
 
+/* icons sizes */
+.tile > img.icon{
+	float:none;
+	position:absolute;
+}
+.tile-small > img.icon{
+	width:50%;
+	height:50%;
+	top:25%;
+	left:25%;
+	bottom:25%;
+	right:25%;
+}
+.tile-medium > img.icon{
+	width:33%;
+	height:33%;
+	left:33%;
+	right:33%;
+	top:33%;
+	bottom:33%;
+}
+.tile-wide > img.icon{
+	width:16%;
+	height:33%;
+	left:42%;
+	right:42%;
+	top:33%;
+	bottom:33%;
+}
+.tile-large > img.icon{
+	width:50%;
+	height:50%;
+	left:25%;
+	right:25%;
+	top:25%;
+	bottom:25%;
+}
+
+
+
+
+/* transform classes */
 .transform-up-all{
 	transform:perspective(500px) rotateX(0.069rad) !important;
 	transform-origin:50% bottom;
@@ -60,9 +100,34 @@
 	transform:perspective(500px) rotateX(-2deg) rotateY(2deg) !important;
 	transform-origin:left top;
 }
-
-
-
 .transform-all-all{
 	transform: perspective(500px) translateZ(-20px) !important;
 }
+
+/* transform for small tiles */
+.tile-small.transform-up-all{
+	transform:perspective(500px) rotateX(0.29rad) !important;
+}
+.tile-small.transform-down-all{
+	transform:perspective(500px) rotateX(-0.29rad) !important;
+}
+.tile-small.transform-all-right{
+	transform:perspective(500px) rotateY(0.29rad) !important;
+}
+.tile-small.transform-all-left{
+	transform:perspective(500px) rotateY(-0.29rad) !important;
+}
+
+.tile-small.transform-up-left{
+	transform:perspective(500px) rotateX(5deg) rotateY(-5deg) !important;
+}
+.tile-small.transform-up-right{
+	transform:perspective(500px) rotateX(5deg) rotateY(5deg) !important;
+}
+.tile-small.transform-down-left{
+	transform:perspective(500px) rotateX(-5deg) rotateY(-5deg) !important;
+}
+.tile-small.transform-down-right{
+	transform:perspective(500px) rotateX(-5deg) rotateY(5deg) !important;
+}
+
