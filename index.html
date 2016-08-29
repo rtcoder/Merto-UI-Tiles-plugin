@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Metro UI Tiles plugin</title>
+		<link rel="stylesheet" href="css/metro-tiles.css">
+		<script src="js/jquery-3.1.0.min.js"></script>
+		<script src="js/metro-tiles.js"></script>
+	</head>
+	<body>
+		<div id="black" style="float:left;background:black"></div>
+		<div id="dd" style="float:left;background:orange"></div>
+		<div id="aa" style="float:left;background:blue"></div>
+		<div id="ww" style="float:left;background:red"></div>
+		<script>
+			$(document).ready(function(){
+				$('#black').createTile({
+					size : 'large'
+				});
+				$('#dd').createTile({
+					size : 'medium'
+				});
+				$('#aa').createTile({
+					size : 'wide',
+					onclick:false,
+					onhover:true
+				});
+				$('#ww').createTile({
+					size : 'small'
+				});
+			})
+		</script>
+	</body>
+</html>
