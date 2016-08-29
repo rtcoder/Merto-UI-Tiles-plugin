@@ -7,10 +7,19 @@
 		<script src="js/metro-tiles.js"></script>
 	</head>
 	<body>
-		<div id="black" style="float:left;background:black"></div>
-		<div id="dd" style="float:left;background:orange"></div>
-		<div id="aa" style="float:left;background:blue"></div>
-		<div id="ww" style="float:left;background:red"></div>
+		<div id="black" style="float:left;background:black">
+			<img src="icon.png" class="icon">
+		</div>
+		<div id="dd" style="float:left;background:orange">
+			<img src="icon.png" class="icon">
+		</div>
+		<div id="aa" style="float:left;background:blue">
+			<img src="icon.png" class="icon">
+		</div>
+		<div id="ww" style="float:left;background:red">
+			<img src="icon.png" class="icon">
+		</div>
+		
 		<script>
 			$(document).ready(function(){
 				$('#black').createTile({
@@ -20,9 +29,7 @@
 					size : 'medium'
 				});
 				$('#aa').createTile({
-					size : 'wide',
-					onclick:false,
-					onhover:true
+					size : 'wide'
 				});
 				$('#ww').createTile({
 					size : 'small'
