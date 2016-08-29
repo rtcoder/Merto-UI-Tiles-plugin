@@ -3,7 +3,6 @@ function addClassToTile( e, element ){
 	var offset = $( element ).offset();
 	var className = [];
 
-
 	divPos = {
 		left : e.pageX - offset.left,
 		top  : e.pageY - offset.top
@@ -38,45 +37,35 @@ function removeClassFromTile( e, element ){
 
 (function ( $ ) {
 	
-	var sizes = ["small", "medium", "wide", "large"];
+	var sizes = ['small', 'medium', 'wide', 'large'];
+	var widgetTypes = ['carousel'];
+	var effectTypes = ['slideLeft', 'slideRight', 'slideTop', 'slideBottom', 'zoomIn', 'zoomOut'];
     
 	$.fn.createTile = function( options ) {
 		
 		var settings = $.extend({
             size    : '', //required
-			onclick : true,
-			onhover : false,
+			widget  : ''
         }, options);
 		
-		
         if( settings.size === '') {
-			console.error("Error: size is empty");
+			console.error( 'Error: size is empty' );
 			
 			return false;
 		}
 		if( sizes.indexOf( settings.size ) < 0 ) {
-			console.error('Error: size ' + size + 'is incorrect');
+			console.error( 'Error: size ' + size + 'is incorrect' );
 			
 			return false;
 		}
 		this.parent().addClass( 'tile-container' );
 		this.addClass( 'tile tile-' + settings.size );
 		
-		if( settings.onclick ) {
-			$( this ).mousedown(function( e ){
-				addClassToTile( e, $( this ) );
-			}).mouseup(function( e ){
-				removeClassFromTile( e, $( this ) );
-			});
-		}
-		
-		if( settings.onhover ) {
-			$( this ).mousemove(function( e ){
-				addClassToTile( e, $( this ) );
-			});
-		}
-		
-		$( this ).mouseleave(function( e ){
+		$( this ).mousedown(function( e ){
+			addClassToTile( e, $( this ) );
+		}).mouseup(function( e ){
+			removeClassFromTile( e, $( this ) );
+		}).mouseleave(function( e ){
 			removeClassFromTile( e, $( this ) );
 		})
 		
