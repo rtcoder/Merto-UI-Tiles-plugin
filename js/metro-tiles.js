@@ -34,32 +34,90 @@ function removeClassFromTile( e, element ){
 		return ( css.match (/(^|\s)transform-\S+/g) || [] ).join(' ');
 	});
 }
-
+function carousel(element, images, time){
+	if(images.constructor !== Array){
+		throw new Error( 'Error: carousel() expects parameter 2 to be array. ' + typeof images + ' given.' );
+		
+		return false;
+	}
+	
+	
+	element.append( '<div class="tile-content"></div>' );
+	element.find('.tile-content').append( '<div class="carousel-images-container" style="width:'+(element.width()*images.length)+'px"></div>' );
+	element.find('.tile-content').append( '<div class="carousel-dots-container"></div>' );
+	for(var i=0; i<images.length; i++){
+		element.find('.tile-content').find('.carousel-images-container').append( '<img src="' + images[i] + '" class="carousel-image-' + i + '" alt="" style="width:'+element.width()+'px;height:'+element.height()+'px;float:left;">' );
+		element.find('.tile-content').find('.carousel-dots-container').append( '<div class="dot" data-nr="'+i+'"></div>' );
+	}
+	$('.dot').click(function(){
+		var nr = $(this).data('nr');
+		var margin = -$(this).parent('.carousel-dots-container').width()*nr;
+		// $(this).parent('.tile').find('.carousel-images-container').css('margin-left',margin+'px')
+		$(this).parent().parent().find('.carousel-images-container').css('margin-left',margin+'px')
+		$(this).parent('.carousel-dots-container').find('.dot').removeClass('active');
+		$(this).addClass('active')
+	});
+	
+	setTimeout(function(){
+		var nr = element.find('.dot.active').data('nr');
+		element.find('.dot[data-nr='+nr+']').click();
+		if(typeof nr === 'undefined'){
+			element.find('.dot').first().click();
+		}
+		console.log(nr)
+	}, time)
+	
+}
 (function ( $ ) {
 	
 	var sizes = ['small', 'medium', 'wide', 'large'];
-	var widgetTypes = ['carousel'];
 	var effectTypes = ['slideLeft', 'slideRight', 'slideTop', 'slideBottom', 'zoomIn', 'zoomOut'];
     
 	$.fn.createTile = function( options ) {
 		
 		var settings = $.extend({
-            size    : '', //required
-			widget  : ''
+            size     : '', //required
+			icon     : null,
+			image    : null,
+			title    : null,
+			carousel : {
+				images : new Array(),
+				time:0
+			}
         }, options);
-		
+		//checking size
         if( settings.size === '') {
-			console.error( 'Error: size is empty' );
+			throw new Error( 'Error: size is empty' );
 			
 			return false;
 		}
+		
 		if( sizes.indexOf( settings.size ) < 0 ) {
-			console.error( 'Error: size ' + size + 'is incorrect' );
+			throw new Error( 'Error: size ' + size + 'is incorrect' );
 			
 			return false;
 		}
+////////////////////////////////////////////////////
+
+		//checking icon
+		if( settings.icon ){
+			this.append( '<img src="' + settings.icon + '" class="icon" alt="">' );
+		}
+		//checking title
+		if( settings.title ){
+			this.append( '<div class="tile-title">' + settings.title + '</div>' );
+		}
+
+		
 		this.parent().addClass( 'tile-container' );
+		this.removeClass(function ( index, css ) {
+			return ( css.match (/(^|\s)tile\S+/g) || [] ).join(' ');
+		});
 		this.addClass( 'tile tile-' + settings.size );
+		
+		if(settings.carousel.time > 0){
+			carousel(this, settings.carousel.images, settings.carousel.time);
+		}
 		
 		$( this ).mousedown(function( e ){
 			addClassToTile( e, $( this ) );

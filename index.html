@@ -3,36 +3,106 @@
 	<head>
 		<title>Metro UI Tiles plugin</title>
 		<link rel="stylesheet" href="css/metro-tiles.css">
-		<script src="js/jquery-3.1.0.min.js"></script>
+		<script src="js/libs/jquery-3.1.0.min.js"></script>
+		<script src="js/libs/masonry.js"></script>
 		<script src="js/metro-tiles.js"></script>
 	</head>
 	<body>
-		<div id="black" style="float:left;background:black">
-			<img src="icon.png" class="icon">
+		<div id="black" style="float:left;background:black"></div>
+		<div id="dd" style="float:left;background:orange"></div>
+		<div id="aa" style="float:left;background:blue"></div>
+		<div id="ww" style="float:left;background:red"></div>
+		
+		<div id="aax" style="float:left;background:blue" class="slideEffect slideRight">
+			<div class="tile-content">
+				<div class="tile-image">
+					<img src="icon.png" class="image">
+				</div>
+				<div class="tile-describe">jakis opis czy cos</div>
+				<div class="tile-notification">5</div>
+			</div>
 		</div>
-		<div id="dd" style="float:left;background:orange">
-			<img src="icon.png" class="icon">
+		<div id="wwx" style="float:left;background:red" class="slideEffect slideTop">
+			<div class="tile-content">
+				<div class="tile-describe">jakis opis czy cos</div>
+				<div class="tile-image">
+					<img src="icon.png" class="image">
+				</div>
+				<div class="tile-notification">12</div>
+			</div>
 		</div>
-		<div id="aa" style="float:left;background:blue">
-			<img src="icon.png" class="icon">
+		<div id="ddx" style="float:left;background:blue" class="slideEffect slideLeft">
+			<div class="tile-content">
+				<div class="tile-describe">jakis opis czy cos</div>
+				<div class="tile-image">
+					<img src="icon.png" class="image">
+				</div>
+				<div class="tile-notification">3</div>
+			</div>
 		</div>
-		<div id="ww" style="float:left;background:red">
-			<img src="icon.png" class="icon">
+		<div id="ass" style="float:left;background:red" class="slideEffect slideBottom">
+			<div class="tile-content">
+				<div class="tile-image">
+					<img src="icon.png" class="image">
+				</div>
+				<div class="tile-describe">jakis opis czy cos</div>
+				<div class="tile-notification">52</div>
+			</div>
 		</div>
+		
+		
+		<div id="adss" style="float:left;background:red"></div>
 		
 		<script>
 			$(document).ready(function(){
 				$('#black').createTile({
-					size : 'large'
+					size : 'large',
+					icon : 'icon.png',
+					title : 'Pikachu'
 				});
 				$('#dd').createTile({
-					size : 'medium'
+					size : 'medium',
+					icon : 'icon.png',
+					title : 'another title'
 				});
 				$('#aa').createTile({
-					size : 'wide'
+					size : 'wide',
+					icon : 'icon.png'
 				});
 				$('#ww').createTile({
-					size : 'small'
+					size : 'small',
+					icon : 'icon.png'
+				});
+				
+				
+				$('#aax').createTile({
+					size : 'large'
+				});
+				$('#wwx').createTile({
+					size : 'medium'
+				});
+				$('#ass').createTile({
+					size : 'wide'
+				});
+				$('#ddx').createTile({
+					size : 'small',
+					title:'slide'
+				});
+				//carousel
+				$('#adss').createTile({
+					size : 'wide',
+					title:'carousel',
+					carousel:{
+						images: new Array('icon.png','icon.png','icon.png'),
+						time:5000
+					}
+				});
+				
+				$('.tile-container').masonry({
+					itemSelector: '.tile',
+					columnWidth: 1,
+					fitWidth:true,
+					
 				});
 			})
 		</script>
