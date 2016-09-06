@@ -2,6 +2,8 @@ function addClassToTile( e, element ){
 	var divPos = {};
 	var offset = $( element ).offset();
 	var className = [];
+	
+	var dotIsHovered = false;
 
 	divPos = {
 		left : e.pageX - offset.left,
@@ -46,9 +48,15 @@ function carousel(element, images, time){
 	element.find('.tile-content').append( '<div class="carousel-images-container" style="width:'+(element.width()*images.length)+'px"></div>' );
 	element.find('.tile-content').append( '<div class="carousel-dots-container"></div>' );
 	for(var i=0; i<images.length; i++){
-		element.find('.tile-content').find('.carousel-images-container').append( '<img src="' + images[i] + '" class="carousel-image-' + i + '" alt="" style="width:'+element.width()+'px;height:'+element.height()+'px;float:left;">' );
-		element.find('.tile-content').find('.carousel-dots-container').append( '<div class="dot" data-nr="'+i+'"></div>' );
+		element.find('.tile-content').find('.carousel-images-container').append( '<img src="' + images[ i ] + '" class="carousel-image-' + i + '" alt="" style="width:'+element.width()+'px;height:'+element.height()+'px;float:left;">' );
+		
+		active = i === 0 ? 'active' : '';
+		
+		element.find('.tile-content').find('.carousel-dots-container').append( '<div class="dot '+active+'" data-nr="' + i + '"></div>' );
 	}
+	
+	element.find('.dot').first().click();
+	
 	$('.dot').click(function(){
 		var nr = $(this).data('nr');
 		var margin = -$(this).parent('.carousel-dots-container').width()*nr;
@@ -56,13 +64,25 @@ function carousel(element, images, time){
 		$(this).parent().parent().find('.carousel-images-container').css('margin-left',margin+'px')
 		$(this).parent('.carousel-dots-container').find('.dot').removeClass('active');
 		$(this).addClass('active')
+	}).hover(function(){
+		dotIsHovered = true;
+	},function(){
+		dotIsHovered = false;
 	});
 	
-	setTimeout(function(){
+	setInterval(function(){
 		var nr = element.find('.dot.active').data('nr');
-		element.find('.dot[data-nr='+nr+']').click();
+		if(!element.is(':hover')){
+			
+		
 		if(typeof nr === 'undefined'){
 			element.find('.dot').first().click();
+		}
+		if(nr === element.find('.dot').last().data('nr')){
+			element.find('.dot').first().click();
+		}
+		
+		element.find('.dot[data-nr=' + ( nr + 1 ) + ']').click();
 		}
 		console.log(nr)
 	}, time)
@@ -120,7 +140,9 @@ function carousel(element, images, time){
 		}
 		
 		$( this ).mousedown(function( e ){
-			addClassToTile( e, $( this ) );
+			if(!dotIsHovered){
+				addClassToTile( e, $( this ) );
+			}
 		}).mouseup(function( e ){
 			removeClassFromTile( e, $( this ) );
 		}).mouseleave(function( e ){

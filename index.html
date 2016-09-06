@@ -52,6 +52,7 @@
 		
 		
 		<div id="adss" style="float:left;background:red"></div>
+		<div id="wadss" style="float:left;background:violet"></div>
 		
 		<script>
 			$(document).ready(function(){
@@ -97,7 +98,21 @@
 						time:5000
 					}
 				});
-			
+				$('#wadss').createTile({
+					size : 'large',
+					title:'carousel',
+					carousel:{
+						images: new Array('icon.png','icon.png','icon.png','icon.png','icon.png','icon.png'),
+						time:3000
+					}
+				});
+				
+				$('.tile-container').masonry({
+					itemSelector: '.tile',
+					columnWidth: 1,
+					fitWidth:true,
+					
+				});
 			})
 		</script>
 	</body>
