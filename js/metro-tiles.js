@@ -1,9 +1,11 @@
+
+var dotIsHovered = false;
+
 function addClassToTile( e, element ){
 	var divPos = {};
 	var offset = $( element ).offset();
 	var className = [];
 	
-	var dotIsHovered = false;
 
 	divPos = {
 		left : e.pageX - offset.left,
@@ -73,18 +75,15 @@ function carousel(element, images, time){
 	setInterval(function(){
 		var nr = element.find('.dot.active').data('nr');
 		if(!element.is(':hover')){
+			if(typeof nr === 'undefined'){
+				element.find('.dot').first().click();
+			}
+			if(nr === element.find('.dot').last().data('nr')){
+				element.find('.dot').first().click();
+			}
 			
-		
-		if(typeof nr === 'undefined'){
-			element.find('.dot').first().click();
+			element.find('.dot[data-nr=' + ( nr + 1 ) + ']').click();
 		}
-		if(nr === element.find('.dot').last().data('nr')){
-			element.find('.dot').first().click();
-		}
-		
-		element.find('.dot[data-nr=' + ( nr + 1 ) + ']').click();
-		}
-		console.log(nr)
 	}, time)
 	
 }

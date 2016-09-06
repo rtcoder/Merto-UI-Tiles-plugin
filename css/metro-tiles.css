@@ -2,12 +2,16 @@
 	position:relative;
 }
 .tile{
-	transition:transform 0.08s ease-in;
+	/* transition:transform 0.08s ease-in; */
 	float:left;
 	margin:0px 5px 5px 0px;
 	/* border:1px solid rgba(150, 150, 150, 0.2); */
 	overflow:hidden;
 	position:relative;
+}
+.tile[class^=transform]{
+	
+	transition:transform 0.08s ease-in;
 }
 .tile, .tile *{
 	-webkit-user-select: none;
