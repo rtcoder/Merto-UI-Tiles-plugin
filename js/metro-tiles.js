@@ -56,7 +56,16 @@ function carousel(element, images, time){
 		$(this).parent().parent().find('.carousel-images-container').css('margin-left',margin+'px')
 		$(this).parent('.carousel-dots-container').find('.dot').removeClass('active');
 		$(this).addClass('active')
-	})
+	});
+	
+	setTimeout(function(){
+		var nr = element.find('.dot.active').data('nr');
+		element.find('.dot[data-nr='+nr+']').click();
+		if(typeof nr === 'undefined'){
+			element.find('.dot').first().click();
+		}
+		console.log(nr)
+	}, time)
 	
 }
 (function ( $ ) {
@@ -106,7 +115,7 @@ function carousel(element, images, time){
 		});
 		this.addClass( 'tile tile-' + settings.size );
 		
-		if(settings.carousel){
+		if(settings.carousel.time > 0){
 			carousel(this, settings.carousel.images, settings.carousel.time);
 		}
 		
