@@ -8,51 +8,26 @@
 		<script src="js/metro-tiles.js"></script>
 	</head>
 	<body>
-		<div id="black" style="float:left;background:black"></div>
-		<div id="dd" style="float:left;background:orange"></div>
-		<div id="aa" style="float:left;background:blue"></div>
-		<div id="ww" style="float:left;background:red"></div>
+		<div id="black" style="background:black"></div>
+		<div id="dd" style="background:orange"></div>
+		<div id="aa" style="background:blue"></div>
+		<div id="ww" style="background:red"></div>
 		
-		<div id="aax" style="float:left;background:blue" class="slideEffect slideRight">
-			<div class="tile-content">
-				<div class="tile-image">
-					<img src="icon.png" class="image">
-				</div>
-				<div class="tile-describe">jakis opis czy cos</div>
-				<div class="tile-notification">5</div>
-			</div>
-		</div>
-		<div id="wwx" style="float:left;background:red" class="slideEffect slideTop">
-			<div class="tile-content">
-				<div class="tile-describe">jakis opis czy cos</div>
-				<div class="tile-image">
-					<img src="icon.png" class="image">
-				</div>
-				<div class="tile-notification">12</div>
-			</div>
-		</div>
-		<div id="ddx" style="float:left;background:blue" class="slideEffect slideLeft">
-			<div class="tile-content">
-				<div class="tile-describe">jakis opis czy cos</div>
-				<div class="tile-image">
-					<img src="icon.png" class="image">
-				</div>
-				<div class="tile-notification">3</div>
-			</div>
-		</div>
-		<div id="ass" style="float:left;background:red" class="slideEffect slideBottom">
-			<div class="tile-content">
-				<div class="tile-image">
-					<img src="icon.png" class="image">
-				</div>
-				<div class="tile-describe">jakis opis czy cos</div>
-				<div class="tile-notification">52</div>
-			</div>
-		</div>
+		<div id="aax" style="background:blue"></div>
+		<div id="wwx" style="background:red"></div>
+		<div id="ddx" style="background:blue"></div>
+		<div id="ass" style="background:red"></div>
 		
 		
-		<div id="adss" style="float:left;background:red"></div>
-		<div id="wadss" style="float:left;background:violet"></div>
+		<div id="adss" style="background:red"></div>
+		<div id="wadss" style="background:violet"></div>
+
+
+		<div id="xsxs" style="background:violet"></div>
+		<div id="sasasa" style="background:violet"></div>
+		<div id="lmlmlm" style="background:violet"></div>
+		<div id="popopo" style="background:violet"></div>
+		<div id="random" style="background:violet"></div>
 		
 		<script>
 			$(document).ready(function(){
@@ -64,10 +39,11 @@
 				$('#dd').createTile({
 					size : 'medium',
 					icon : 'icon.png',
-					title : 'another title'
+					title : 'another title',
+					notification: 5
 				});
 				$('#aa').createTile({
-					size : 'wide',
+					size : 'small',
 					icon : 'icon.png'
 				});
 				$('#ww').createTile({
@@ -77,41 +53,112 @@
 				
 				
 				$('#aax').createTile({
-					size : 'large'
+					size : 'small',
+					describe:'jakis opis czy cos',
+					image:'icon.png',
+					title:'du',
+					notification: 5,
+					effect: 'slide-right'
 				});
 				$('#wwx').createTile({
-					size : 'medium'
+					size : 'small',
+					describe:'jakis opis czy cos',
+					image:'icon.png',
+					title:'du',
+					notification:12,
+					effect: 'slide-top'
 				});
 				$('#ass').createTile({
-					size : 'wide'
+					size : 'wide',
+					describe:'jakis opis czy cos',
+					image:'https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/pia18366-1041.jpg?itok=EjU0H4K3',
+					title:'du',
+					notification:120,
+					effect: 'slide-bottom'
 				});
 				$('#ddx').createTile({
-					size : 'small',
-					title:'slide'
+					size : 'wide',
+					describe:'jakis opis czy cos',
+					image:'icon.png',
+					title:'slide',
+					notification:12,
+					effect: 'slide-left'
 				});
 				//carousel
 				$('#adss').createTile({
 					size : 'wide',
+					type: 'carousel',
 					title:'carousel',
 					carousel:{
 						images: new Array('icon.png','icon.png','icon.png'),
 						time:5000
-					}
+					},
+					notification: 9
 				});
 				$('#wadss').createTile({
 					size : 'large',
-					title:'carousel',
+					type: 'carousel',
+					title:'lost',
 					carousel:{
 						images: new Array('icon.png','icon.png','icon.png','icon.png','icon.png','icon.png'),
 						time:3000
 					}
 				});
-				
-				$('.tile-container').masonry({
-					itemSelector: '.tile',
-					columnWidth: 1,
-					fitWidth:true,
-					
+
+
+				$('#xsxs').createTile({
+					size : 'wide',
+					type:'slider',
+					title:'slide-top',
+					slider:{
+						images: new Array('icon.png','icon.png','icon.png','icon.png','icon.png','icon.png'),
+						time:2000,
+						direction: 'top'
+					}
+				});
+
+				$('#sasasa').createTile({
+					size : 'wide',
+					title:'slide-left',
+					type:'slider',
+					slider:{
+						images: new Array('icon.png','https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/pia18366-1041.jpg?itok=EjU0H4K3','icon.png','icon.png','icon.png','icon.png'),
+						time:2000,
+						direction: 'left'
+					}
+				});
+
+				$('#popopo').createTile({
+					size : 'medium',
+					title:'slide-right',
+					type:'slider',
+					slider:{
+						images: new Array('icon.png','https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/pia18366-1041.jpg?itok=EjU0H4K3','icon.png','icon.png','icon.png','icon.png'),
+						time:2000,
+						direction: 'right'
+					}
+				});
+
+				$('#lmlmlm').createTile({
+					size : 'medium',
+					title:'slide-bottom',
+					type:'slider',
+					slider:{
+						images: new Array('icon.png','https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/pia18366-1041.jpg?itok=EjU0H4K3','http://assets.barcroftmedia.com.s3-website-eu-west-1.amazonaws.com/assets/images/recent-images-11.jpg'),
+						time:1500,
+						direction: 'bottom'
+					}
+				});
+
+				$('#random').createTile({
+					size : 'wide',
+					title:'slide-random',
+					type:'slider',
+					slider:{
+						images: new Array('icon.png','icon.png','icon.png','icon.png','icon.png','icon.png'),
+						time:2100,
+						direction: 'random'
+					}
 				});
 			})
 		</script>
