@@ -7,7 +7,7 @@
  * If you found bug, please contact me via email <dawidjez@gmail.com>
  *
  * @author Dawid Jeż aka rtCoder
- * @version 0.5.1
+ * @version 0.6
  * @url https://github.com/rtcoder/Metro-UI-Tiles-plugin/
  *
  * CHANGELOG:
@@ -34,6 +34,8 @@
  * - fix slider
  *   - position absolute for image and description
  *   - elements erder and slide direction are independent of themselve
+ * v0.6
+ * - add zoom effects
  * 
  */
 
@@ -220,7 +222,7 @@ function addEffectClass(element, effect){
 
 		if( effectTypes.indexOf( type ) >= 0 && directions.indexOf( direction ) >= 0 ) {
 			var effectClass = type + direction.capitalizeFirstLetter();
-			var typeEffectClass = type == 'slide' ? 'slideEffect' : 'zoomEffect';
+			var typeEffectClass = type == 'slide' ? 'slideEffect' : 'zoomEffect '+type;
 
 			element.addClass( typeEffectClass + ' ' + effectClass );
 		}else{

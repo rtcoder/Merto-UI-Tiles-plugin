@@ -17,26 +17,26 @@
 	user-select: none;
 }
 .tile-small,
-.tile-small.slideEffect .tile-describe,
-.tile-small.slideEffect .tile-image{
+.tile-small .tile-describe,
+.tile-small .tile-image{
 	width:70px;
 	height:70px;
 }
 .tile-medium,
-.tile-medium.slideEffect .tile-describe,
-.tile-medium.slideEffect .tile-image{
+.tile-medium .tile-describe,
+.tile-medium .tile-image{
 	width:150px;
 	height:150px;
 }
 .tile-wide,
-.tile-wide.slideEffect .tile-describe,
-.tile-wide.slideEffect .tile-image{
+.tile-wide .tile-describe,
+.tile-wide .tile-image{
 	width:310px;
 	height:150px;
 }
 .tile-large,
-.tile-large.slideEffect .tile-describe,
-.tile-large.slideEffect .tile-image{
+.tile-large .tile-describe,
+.tile-large .tile-image{
 	width:310px;
 	height:310px;
 }
@@ -219,6 +219,10 @@
 
 
 /* styles for effects */
+.tile.slideEffect:hover .tile-content .tile-describe,
+.tile.zoomEffect:hover .tile-content .tile-describe{
+	margin: 0px!important;
+}
 /* slide */
 .tile.slideEffect .tile-content .tile-describe,
 .tile.slideEffect .tile-content .tile-image{
@@ -344,9 +348,6 @@
 .tile-wide.slideEffect.slideLeft .tile-content .tile-describe{
 	margin-left: -310px;
 }
-.tile-wide.slideEffect.slideLeft:hover .tile-content .tile-describe{
-	margin-left: 0px;
-}
 .tile-wide.slideEffect.slideLeft .tile-content .tile-image{
 	margin-left: 0px;
 }
@@ -356,9 +357,6 @@
 /*slide right*/
 .tile-wide.slideEffect.slideRight .tile-content .tile-describe{
 	margin-left: 310px;
-}
-.tile-wide.slideEffect.slideRight:hover .tile-content .tile-describe{
-	margin-left: 0px;
 }
 .tile-wide.slideEffect.slideRight .tile-content .tile-image{
 	margin-left: 0px;
@@ -370,9 +368,6 @@
 .tile-wide.slideEffect.slideTop .tile-content .tile-describe{
 	margin-top: 150px;
 }
-.tile-wide.slideEffect.slideTop:hover .tile-content .tile-describe{
-	margin-top: 0px;
-}
 .tile-wide.slideEffect.slideTop .tile-content .tile-image{
 	margin-top: 0px;
 }
@@ -382,9 +377,6 @@
 /*slide bottom*/
 .tile-wide.slideEffect.slideBottom .tile-content .tile-describe{
 	margin-top: -150px;
-}
-.tile-wide.slideEffect.slideBottom:hover .tile-content .tile-describe{
-	margin-top: 0px;
 }
 .tile-wide.slideEffect.slideBottom .tile-content .tile-image{
 	margin-top: 0px;
@@ -398,9 +390,6 @@
 .tile-large.slideEffect.slideLeft .tile-content .tile-describe{
 	margin-left: -310px;
 }
-.tile-large.slideEffect.slideLeft:hover .tile-content .tile-describe{
-	margin-left: 0px;
-}
 .tile-large.slideEffect.slideLeft .tile-content .tile-image{
 	margin-left: 0px;
 }
@@ -410,9 +399,6 @@
 /*slide right*/
 .tile-large.slideEffect.slideRight .tile-content .tile-describe{
 	margin-left: 310px;
-}
-.tile-large.slideEffect.slideRight:hover .tile-content .tile-describe{
-	margin-left: 0px;
 }
 .tile-large.slideEffect.slideRight .tile-content .tile-image{
 	margin-left: 0px;
@@ -424,9 +410,6 @@
 .tile-large.slideEffect.slideTop .tile-content .tile-describe{
 	margin-top: 310px;
 }
-.tile-large.slideEffect.slideTop:hover .tile-content .tile-describe{
-	margin-top: 0px;
-}
 .tile-large.slideEffect.slideTop .tile-content .tile-image{
 	margin-top: 0px;
 }
@@ -437,9 +420,6 @@
 .tile-large.slideEffect.slideBottom .tile-content .tile-describe{
 	margin-top: -310px;
 }
-.tile-large.slideEffect.slideBottom:hover .tile-content .tile-describe{
-	margin-top: 0px;
-}
 .tile-large.slideEffect.slideBottom .tile-content .tile-image{
 	margin-top: 0px;
 }
@@ -449,9 +429,141 @@
 
 /* zoom on hover */
 
-.tile-small.zoomEffect.zoomIn .tile-content{
+.tile.zoomEffect .tile-content .tile-describe,
+.tile.zoomEffect .tile-content .tile-image{
+	position: absolute !important;
+}
+.tile.zoomEffect .tile-content .tile-image{
+	transition:transform 0.2s ease-out;
+}
+.tile.zoomEffect .tile-content .tile-describe{
+	transition: margin 0.2s ease-out;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.tile.zoomEffect.zoomIn .tile-content .tile-image{
+	transform: scale(1,1);
+}
+
+.tile.zoomEffect.zoomIn:hover .tile-content .tile-image{
+	transform: scale(1.5,1.5);
+}
+
+.tile.zoomEffect.zoomOut .tile-content .tile-image{
+	transform: scale(1.5,1.5);
+}
+
+.tile.zoomEffect.zoomOut:hover .tile-content .tile-image{
+	transform: scale(1,1);
+}
+
+
+/*small*/
+
+.tile-small.zoomEffect.zoomInLeft .tile-content .tile-describe,
+.tile-small.zoomEffect.zoomOutLeft .tile-content .tile-describe{
+	margin-left: -70px;
+}
+
+.tile-small.zoomEffect.zoomInRight .tile-content .tile-describe,
+.tile-small.zoomEffect.zoomOutRight .tile-content .tile-describe{
+	margin-left: 70px;
+}
+
+.tile-small.zoomEffect.zoomInTop .tile-content .tile-describe,
+.tile-small.zoomEffect.zoomOutTop .tile-content .tile-describe{
+	margin-top: 70px;
+}
+
+.tile-small.zoomEffect.zoomInBottom .tile-content .tile-describe,
+.tile-small.zoomEffect.zoomOutBottom .tile-content .tile-describe{
+	margin-top: -70px;
+}
+
+/*medium*/
+
+.tile-medium.zoomEffect.zoomInLeft .tile-content .tile-describe,
+.tile-medium.zoomEffect.zoomOutLeft .tile-content .tile-describe{
+	margin-left: -150px;
+}
+
+.tile-medium.zoomEffect.zoomInRight .tile-content .tile-describe,
+.tile-medium.zoomEffect.zoomOutRight .tile-content .tile-describe{
+	margin-left: 150px;
+}
+
+.tile-medium.zoomEffect.zoomInTop .tile-content .tile-describe,
+.tile-medium.zoomEffect.zoomOutTop .tile-content .tile-describe{
+	margin-top: 150px;
+}
+
+.tile-medium.zoomEffect.zoomInBottom .tile-content .tile-describe,
+.tile-medium.zoomEffect.zoomOutBottom .tile-content .tile-describe{
+	margin-top: -150px;
+}
+
+/*wide*/
+
+
+.tile-wide.zoomEffect.zoomInLeft .tile-content .tile-describe,
+.tile-wide.zoomEffect.zoomOutLeft .tile-content .tile-describe{
+	margin-left: -310px;
+}
+
+.tile-wide.zoomEffect.zoomInRight .tile-content .tile-describe,
+.tile-wide.zoomEffect.zoomOutRight .tile-content .tile-describe{
+	margin-left: 310px;
+}
+
+.tile-wide.zoomEffect.zoomInTop .tile-content .tile-describe,
+.tile-wide.zoomEffect.zoomOutTop .tile-content .tile-describe{
+	margin-top: 150px;
+}
+
+.tile-wide.zoomEffect.zoomInBottom .tile-content .tile-describe,
+.tile-wide.zoomEffect.zoomOutBottom .tile-content .tile-describe{
+	margin-top: -150px;
+}
+
+/*large*/
+
+
+
+.tile-wide.zoomEffect.zoomInLeft .tile-content .tile-describe,
+.tile-wide.zoomEffect.zoomOutLeft .tile-content .tile-describe{
+	margin-left: -310px;
+}
+
+.tile-wide.zoomEffect.zoomInRight .tile-content .tile-describe,
+.tile-wide.zoomEffect.zoomOutRight .tile-content .tile-describe{
+	margin-left: 310px;
+}
+
+.tile-wide.zoomEffect.zoomInTop .tile-content .tile-describe,
+.tile-wide.zoomEffect.zoomOutTop .tile-content .tile-describe{
+	margin-top: 310px;
+}
+
+.tile-wide.zoomEffect.zoomInBottom .tile-content .tile-describe,
+.tile-wide.zoomEffect.zoomOutBottom .tile-content .tile-describe{
 	margin-top: -310px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
