@@ -1,166 +1,28 @@
 <!doctype html>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width" />
 		<title>Metro UI Tiles plugin</title>
 		<link rel="stylesheet" href="css/metro-tiles.css">
+		<link rel="stylesheet" href="css/style.css">
 		<script src="js/libs/jquery-3.1.0.min.js"></script>
-		<script src="js/libs/masonry.js"></script>
 		<script src="js/metro-tiles.js"></script>
 	</head>
 	<body>
-		<div id="black" style="background:black"></div>
-		<div id="dd" style="background:orange"></div>
-		<div id="aa" style="background:blue"></div>
-		<div id="ww" style="background:red"></div>
-		
-		<div id="aax" style="background:blue"></div>
-		<div id="wwx" style="background:red"></div>
-		<div id="ddx" style="background:blue"></div>
-		<div id="ass" style="background:red"></div>
-		
-		
-		<div id="adss" style="background:red"></div>
-		<div id="wadss" style="background:violet"></div>
+	
+		<div class="wrapper">
+			<header>
+				<nav>
+					<ul>
+						<li><a href="#">Metro UI Tiles</a></li>
+						<li><a href="#">Download</a></li>
+						<li><a href="#">Documentation</a></li>
+						<li><a href="#">Examples</a></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
 
-
-		<div id="xsxs" style="background:violet"></div>
-		<div id="sasasa" style="background:violet"></div>
-		<div id="lmlmlm" style="background:violet"></div>
-		<div id="popopo" style="background:violet"></div>
-		<div id="random" style="background:violet"></div>
-		
-		<script>
-			$(document).ready(function(){
-				$('#black').createTile({
-					size : 'large',
-					icon : 'icon.png',
-					title : 'Pikachu'
-				});
-				$('#dd').createTile({
-					size : 'medium',
-					icon : 'icon.png',
-					title : 'another title',
-					notification: 5
-				});
-				$('#aa').createTile({
-					size : 'small',
-					icon : 'icon.png'
-				});
-				$('#ww').createTile({
-					size : 'small',
-					icon : 'icon.png'
-				});
-				
-				
-				$('#aax').createTile({
-					size : 'wide',
-					describe:'jakis opis czy cos',
-					image:'icon.png',
-					title:'du',
-					notification: 5,
-					effect: 'zoomOut-top'
-				});
-				$('#wwx').createTile({
-					size : 'small',
-					describe:'jakis opis czy cos',
-					image:'icon.png',
-					title:'du',
-					notification:12,
-					effect: 'slide-top'
-				});
-				$('#ass').createTile({
-					size : 'wide',
-					describe:'jakis opis czy cos',
-					image:'https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/pia18366-1041.jpg?itok=EjU0H4K3',
-					title:'du',
-					notification:120,
-					effect: 'slide-bottom'
-				});
-				$('#ddx').createTile({
-					size : 'wide',
-					describe:'jakis opis czy cos',
-					image:'icon.png',
-					title:'slide',
-					notification:12,
-					effect: 'slide-left'
-				});
-				//carousel
-				$('#adss').createTile({
-					size : 'wide',
-					type: 'carousel',
-					title:'carousel',
-					carousel:{
-						images: new Array('icon.png','icon.png','icon.png'),
-						time:5000
-					},
-					notification: 9
-				});
-				$('#wadss').createTile({
-					size : 'large',
-					type: 'carousel',
-					title:'lost',
-					carousel:{
-						images: new Array('icon.png','icon.png','icon.png','icon.png','icon.png','icon.png'),
-						time:3000
-					}
-				});
-
-
-				$('#xsxs').createTile({
-					size : 'wide',
-					type:'slider',
-					title:'slide-top',
-					slider:{
-						images: new Array('icon.png','icon.png','icon.png','icon.png','icon.png','icon.png'),
-						time:2000,
-						direction: 'top'
-					}
-				});
-
-				$('#sasasa').createTile({
-					size : 'wide',
-					title:'slide-left',
-					type:'slider',
-					slider:{
-						images: new Array('icon.png','https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/pia18366-1041.jpg?itok=EjU0H4K3','icon.png','icon.png','icon.png','icon.png'),
-						time:2000,
-						direction: 'left'
-					}
-				});
-
-				$('#popopo').createTile({
-					size : 'medium',
-					title:'slide-right',
-					type:'slider',
-					slider:{
-						images: new Array('icon.png','https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/pia18366-1041.jpg?itok=EjU0H4K3','icon.png','icon.png','icon.png','icon.png'),
-						time:2000,
-						direction: 'right'
-					}
-				});
-
-				$('#lmlmlm').createTile({
-					size : 'medium',
-					title:'slide-bottom',
-					type:'slider',
-					slider:{
-						images: new Array('icon.png','https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/pia18366-1041.jpg?itok=EjU0H4K3','http://assets.barcroftmedia.com.s3-website-eu-west-1.amazonaws.com/assets/images/recent-images-11.jpg'),
-						time:1500,
-						direction: 'bottom'
-					}
-				});
-
-				$('#random').createTile({
-					size : 'wide',
-					title:'slide-random',
-					type:'slider',
-					slider:{
-						images: new Array('icon.png','icon.png','icon.png','icon.png','icon.png','icon.png'),
-						time:2100,
-						direction: 'random'
-					}
-				});
-			})
-		</script>
 	</body>
 </html>

@@ -1,0 +1,43 @@
+body{
+	margin: 0px;
+	padding: 0px;
+	background: #ddd;
+	font-family: Helvetica, Arial;
+}
+#wrapper{
+	width: 100%;
+	float: left;
+}
+header{
+	width: 100%;
+	float: left;
+	height: 150px;
+	background: #0072c6;
+	text-align: center;
+}
+header a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 20px;
+}
+nav{
+	width: 100%;
+	float: left;
+	margin: 0 auto;
+}
+ul{
+	width: 100%;
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-align: center;
+}
+li{
+	display: inline-block;
+	margin: 5px;
+}
+
+@media screen and (max-width: 767px) {
+	
+}
