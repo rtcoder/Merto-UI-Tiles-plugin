@@ -151,6 +151,9 @@ a.content-link:hover{
 	background: #0072c6;
 	color: #fff;
 }
+/*a.current-link{
+	background: blue
+}*/
 h1{
 	font-size: 2em;
 }
