@@ -1,27 +1,256 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width" />
-		<title>Metro UI Tiles plugin</title>
+		<title>Documentation - Metro UI Tiles plugin</title>
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/atom-one-dark.min.css">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
 		<link rel="stylesheet" href="css/metro-tiles.css">
 		<link rel="stylesheet" href="css/style.css">
 		<script src="js/libs/jquery-3.1.0.min.js"></script>
 		<script src="js/metro-tiles.js"></script>
+		<script src="js/main.js"></script>
+		<script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
 	</head>
 	<body>
-	
-		<div class="wrapper">
+		<div id="wrapper">
 			<header>
-				<nav>
+				<nav id="menu">
 					<ul>
-						<li><a href="#">Metro UI Tiles</a></li>
-						<li><a href="#">Download</a></li>
-						<li><a href="#">Documentation</a></li>
-						<li><a href="#">Examples</a></li>
+						<li><a href="#" class="logo">
+						<img src="img/logo.png">
+						</a></li>
+						<li><a href="#" class="title">Metro UI Tiles</a></li>
+						<li><a href="https://github.com/rtcoder/Metro-UI-Tiles-plugin/archive/master.zip">Download</a></li>
+						<li><a href="#docs">Docs</a></li>
 					</ul>
 				</nav>
 			</header>
+			<div id="content">
+				<div id="menuBtn">&#x2261;</div>
+				<nav id="sidebar">
+					<div class="section-sidebar">
+						<h4 class="title-sidebar">
+							<a href="#getting-started">Getting started</a>
+						</h4>
+						<ul class="links-sidebar">
+							<li><a href="#getting-started-download">Download Metro UI Tiles</a></li>
+							<li><a href="#getting-started-usage">Usage</a></li>
+							<li><a href="#getting-started-creating-a-tile">Creating a Tile</a></li>
+						</ul>
+					</div>
+					<div class="section-sidebar">
+						<h4 class="title-sidebar">
+							<a href="#tile-configuration">Tile configuration</a>
+						</h4>
+						<ul class="links-sidebar">
+							<li><a href="#tile-configuration-options">Options</a></li>
+							<li><a href="#tile-configuration-size">Size</a></li>
+						</ul>
+					</div>
+				</nav>
+				<div id="docs">
+					<img src="img/logo_big.png" id="big_logo">
+					<section id="getting-started">
+						<h1 class="section-title">
+							<a class="section-link" href="#getting-started">Getting started</a>
+						</h1>
+						<div class="section-content">
+							<h2 id="getting-started-download">
+								<a class="section-link" href="#getting-started-download">Download</a>
+							</h2>
+							<p>
+								You can download the latest version of <a href="https://github.com/rtcoder/Metro-UI-Tiles-plugin/releases/latest" class="content-link">Metro UI Tiles on GitHub</a> or just use links below.
+							</p>
+							<pre>
+							<code class="html">&lt;script src="https://cdn.rawgit.com/rtcoder/Metro-UI-Tiles-plugin/v0.6/js/metro-tiles.js">&lt;/script>
+&lt;link rel="stylesheet" href="https://cdn.rawgit.com/rtcoder/Metro-UI-Tiles-plugin/v0.6/css/metro-tiles.css"></code>
+							</pre>
+
+							<h2 id="getting-started-usage">
+								<a class="section-link" href="#getting-started-usage">Usage</a>
+							</h2>
+							<pre>
+							<code class="html">&lt;script src="metro-tiles.js">&lt;/script>
+&lt;script>
+    $('div').createTile({...});
+&lt;/script></code>
+							</pre>
+							<h2 id="getting-started-creating-a-tile">
+								<a class="section-link" href="#getting-started-creating-a-tile">Creating a Tile</a>
+							</h2>
+							<pre>
+							<p data-height="265" data-theme-id="0" data-slug-hash="dprLPO" data-default-tab="js,result" data-user="rtCoder" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/rtCoder/pen/dprLPO/">simple tile</a> by Dawid (<a href="http://codepen.io/rtCoder">@rtCoder</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+						</div>
+					</section>
+					<section id="getting-started">
+						<h1 class="section-title">
+							<a class="section-link" href="#tile-configuration">Tile configuration</a>
+						</h1>
+						<div class="section-content">
+							<h2 id="tile-configuration-options">
+								<a class="section-link" href="#tile-configuration-options">Options</a>
+							</h2>
+							<table>
+								<thead>
+									<tr>
+										<th>Name</th>
+										<th>Type</th>
+										<th>Required</th>
+										<th>Default</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>size</td>
+										<td>String</td>
+										<td>Yes</td>
+										<td></td>
+										<td>
+										Define tile size:<br><br>
+										More in <a href="#tile-configuration-size" class="content-link">size section</a>
+										</td>
+									</tr>
+									<tr>
+										<td>type</td>
+										<td>String</td>
+										<td>only for carousel and slider</td>
+										<td><i>'normal'</i></td>
+										<td>
+										Define type of tile:<br><br>
+										normal (default)<br>
+										slider<br>
+										carousel
+										</td>
+									</tr>
+									<tr>
+										<td>icon</td>
+										<td>String</td>
+										<td>No</td>
+										<td><i>null</i></td>
+										<td>URL to icon</td>
+									</tr>
+									<tr>
+										<td>image</td>
+										<td>String</td>
+										<td>No</td>
+										<td><i>null</i></td>
+										<td>URL to image</td>
+									</tr>
+									<tr>
+										<td>title</td>
+										<td>String</td>
+										<td>No</td>
+										<td><i>null</i></td>
+										<td>Title of tile</td>
+									</tr>
+									<tr>
+										<td>describe</td>
+										<td>String</td>
+										<td>No</td>
+										<td><i>null</i></td>
+										<td>Describe of tile</td>
+									</tr>
+									<tr>
+										<td>notification</td>
+										<td>Numeric</td>
+										<td>No</td>
+										<td><i>null</i></td>
+										<td>Number in bottom right corner</td>
+									</tr>
+									<tr>
+										<td>effect</td>
+										<td>String</td>
+										<td>No</td>
+										<td><i>null</i></td>
+										<td>
+										Define slide and zoom effects<br>
+										More in <a href="#tile-configuration-effects" class="content-link">effects section</a>
+										</td>
+									</tr>
+									<tr>
+										<td>carousel</td>
+										<td>Object</td>
+										<td>No</td>
+										<td><i>Object</i></td>
+										<td>
+										Define carousel<br>
+										More in <a href="#tile-configuration-carousel" class="content-link">carousel section</a>
+										</td>
+									</tr>
+									<tr>
+										<td>carousel.images</td>
+										<td>Array[string]</td>
+										<td>only for carousel</td>
+										<td><i>empty array</i></td>
+										<td>
+										Carousel images list<br>
+										More in <a href="#tile-configuration-carousel" class="content-link">carousel section</a>
+										</td>
+									</tr>
+									<tr>
+										<td>carousel.time</td>
+										<td>Numeric</td>
+										<td>only for carousel</td>
+										<td><i>0</i></td>
+										<td>
+										Carousel time interval<br>
+										must be bigger than 0<br>
+										More in <a href="#tile-configuration-carousel" class="content-link">carousel section</a>
+										</td>
+									</tr>
+									<tr>
+										<td>slider</td>
+										<td>Object</td>
+										<td>No</td>
+										<td><i>Object</i></td>
+										<td>
+										Define slider<br>
+										More in <a href="#tile-configuration-slider" class="content-link">slider section</a>
+										</td>
+									</tr>
+									<tr>
+										<td>slider.images</td>
+										<td>Array[string]</td>
+										<td>only for slider</td>
+										<td><i>empty array</i></td>
+										<td>
+										Slider images list<br>
+										More in <a href="#tile-configuration-slider" class="content-link">slider section</a>
+										</td>
+									</tr>
+									<tr>
+										<td>slider.time</td>
+										<td>Numeric</td>
+										<td>only for slider</td>
+										<td><i>0</i></td>
+										<td>
+										Slider time interval<br>
+										must be bigger than 0<br>
+										More in <a href="#tile-configuration-slider" class="content-link">slider section</a>
+										</td>
+									</tr>
+									<tr>
+										<td>slider.direction</td>
+										<td>String</td>
+										<td>only for slider</td>
+										<td><i>null</i></td>
+										<td>
+										Slide direction<br>
+										More in <a href="#tile-configuration-slider" class="content-link">slider section</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+							<h2 id="tile-configuration-size">
+								<a class="section-link" href="#tile-configuration-size">Size</a>
+							</h2>
+					</section>
+				</div>
+			</div>
 		</div>
 
 	</body>

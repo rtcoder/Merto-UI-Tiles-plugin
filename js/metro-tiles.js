@@ -295,7 +295,7 @@ function prepareTile (element, settings) {
 			icon : null,
 			image : null,
 			title : null,
-			desctibe : null,
+			describe : null,
 			notification : null,
 			effect : null,
 			carousel : {
