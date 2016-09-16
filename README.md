@@ -1,2 +1,2 @@
-# Merto-UI-Tiles-plugin
+# Metro-UI-Tiles-plugin
 jQuery plugin
