@@ -151,13 +151,13 @@ a.content-link{
 a.content-link::before{
 	content: ' ';
 	width: 0px;
-	height: inherit;
+	height: 100%;
 	position: absolute;
 	margin: -3px -4px;
 	text-align: center;
 	background: #0072c6;
 	transition: width 0.2s ease-in;
-	z-index: -1px;
+	z-index: -1;
 }
 a.content-link:hover{
 	color: #fff;
