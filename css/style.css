@@ -87,6 +87,21 @@ header li{
 #sidebar a{
 	color: #3a3a3a;
 	text-decoration: none;
+	position:relative;
+}
+
+#sidebar a::before{
+	content: '';
+	height: 2px;
+	width: 0px;
+	position: absolute;
+	background:#0072c6;
+	margin: 0px 0px 0px 0px;
+	transition: all 0.2s ease-in;
+}
+#sidebar a::before{
+	margin: 0px 0px 0px 0px;
+	width:100%;
 }
 #sidebar li{
 	padding: 5px 15px;
@@ -149,12 +164,11 @@ a.content-link{
 	position: relative;
 }
 a.content-link::before{
-	content: ' ';
+	content: '';
 	width: 0px;
 	height: 100%;
 	position: absolute;
 	margin: -3px -4px;
-	text-align: center;
 	background: #0072c6;
 	transition: width 0.2s ease-in;
 	z-index: -1;
