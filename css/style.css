@@ -147,9 +147,21 @@ a.content-link{
 	transition: color 0.2s ease-in;
 	padding: 3px 4px;
 }
-a.content-link:hover{
+a.content-link::before{
+	content: ' ';
+	width: 0px;
+	height: inherit;
+	position: absolute;
+	margin: 0px;
+	text-align: center;
 	background: #0072c6;
+	transition: width 0.2s ease-in;
+}
+a.content-link:hover{
 	color: #fff;
+}
+a.content-link:hover::before{
+	width: 100%;
 }
 /*a.current-link{
 	background: blue
