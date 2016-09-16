@@ -146,16 +146,18 @@ a.content-link{
 	border-bottom: 1px solid #0072c6;
 	transition: color 0.2s ease-in;
 	padding: 3px 4px;
+	position: relative;
 }
 a.content-link::before{
 	content: ' ';
 	width: 0px;
 	height: inherit;
 	position: absolute;
-	margin: 0px;
+	margin: -3px -4px;
 	text-align: center;
 	background: #0072c6;
 	transition: width 0.2s ease-in;
+	z-index: -1px;
 }
 a.content-link:hover{
 	color: #fff;
