@@ -99,7 +99,7 @@ header li{
 	margin: 0px 0px 0px 0px;
 	transition: all 0.2s ease-in;
 }
-#sidebar a::before{
+#sidebar a:hover::before{
 	margin: 0px 0px 0px 0px;
 	width:100%;
 }
