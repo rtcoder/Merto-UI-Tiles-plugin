@@ -11,7 +11,7 @@
 		<script src="js/libs/jquery-3.1.0.min.js"></script>
 		<script src="js/metro-tiles.js"></script>
 		<script src="js/main.js"></script>
-		<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+		<!-- <script async src="https://assets.codepen.io/assets/embed/ei.js"></script> -->
 	</head>
 	<body>
 		<div id="wrapper">
@@ -47,6 +47,14 @@
 						<ul class="links-sidebar">
 							<li><a href="#tile-configuration-options">Options</a></li>
 							<li><a href="#tile-configuration-size">Size</a></li>
+							<li><a href="#tile-configuration-icon">Icon</a></li>
+							<li><a href="#tile-configuration-image">Image</a></li>
+							<li><a href="#tile-configuration-title">Title</a></li>
+							<li><a href="#tile-configuration-describe">Describe</a></li>
+							<li><a href="#tile-configuration-notification">Notification</a></li>
+							<li><a href="#tile-configuration-effect">Effect</a></li>
+							<li><a href="#tile-configuration-carousel">Carousel</a></li>
+							<li><a href="#tile-configuration-slide">Slide</a></li>
 						</ul>
 					</div>
 				</nav>
@@ -73,6 +81,7 @@
 							</h2>
 							<pre>
 							<code class="html">&lt;script src="metro-tiles.js">&lt;/script>
+&lt;link rel="stylesheet" href="metro-tiles.css">
 &lt;script>
     $('div').createTile({...});
 &lt;/script></code>
@@ -81,10 +90,10 @@
 								<a class="section-link" href="#getting-started-creating-a-tile">Creating a Tile</a>
 							</h2>
 							<pre>
-							<p data-height="265" data-theme-id="0" data-slug-hash="dprLPO" data-default-tab="result" data-user="rtCoder" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/rtCoder/pen/dprLPO/">simple tile</a> by Dawid (<a href="http://codepen.io/rtCoder">@rtCoder</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+							<p data-height="265" data-theme-id="0" data-slug-hash="dprLPO" data-default-tab="result" data-user="rtCoder" data-embed-version="2" class="codepen"></p>
 						</div>
 					</section>
-					<section id="getting-started">
+					<section id="tile-configuration">
 						<h1 class="section-title">
 							<a class="section-link" href="#tile-configuration">Tile configuration</a>
 						</h1>
@@ -108,36 +117,28 @@
 										<td>String</td>
 										<td>Yes</td>
 										<td></td>
-										<td>
-										Define tile size:<br><br>
-										More in <a href="#tile-configuration-size" class="content-link">size section</a>
-										</td>
+										<td>Define tile <a href="#tile-configuration-size" class="content-link">size</a></td>
 									</tr>
 									<tr>
 										<td>type</td>
 										<td>String</td>
-										<td>only for carousel and slider</td>
+										<td>only for <a href="#tile-configuration-carousel" class="content-link">carousel</a> and <a href="#tile-configuration-slider" class="content-link">slider</a></td>
 										<td><i>'normal'</i></td>
-										<td>
-										Define type of tile:<br><br>
-										normal (default)<br>
-										slider<br>
-										carousel
-										</td>
+										<td>Define type of tile</td>
 									</tr>
 									<tr>
 										<td>icon</td>
-										<td>String</td>
+										<td>URL</td>
 										<td>No</td>
 										<td><i>null</i></td>
-										<td>URL to icon</td>
+										<td>Define <a href="#tile-configuration-icon" class="content-link">icon</a></td>
 									</tr>
 									<tr>
 										<td>image</td>
-										<td>String</td>
+										<td>URL</td>
 										<td>No</td>
 										<td><i>null</i></td>
-										<td>URL to image</td>
+										<td>Define <a href="#tile-configuration-image" class="content-link">image</a></td>
 									</tr>
 									<tr>
 										<td>title</td>
@@ -155,7 +156,7 @@
 									</tr>
 									<tr>
 										<td>notification</td>
-										<td>Numeric</td>
+										<td>Number</td>
 										<td>No</td>
 										<td><i>null</i></td>
 										<td>Number in bottom right corner</td>
@@ -165,40 +166,30 @@
 										<td>String</td>
 										<td>No</td>
 										<td><i>null</i></td>
-										<td>
-										Define slide and zoom effects<br>
-										More in <a href="#tile-configuration-effects" class="content-link">effects section</a>
-										</td>
+										<td>Define <a href="#tile-configuration-effects" class="content-link">effects</a></td>
 									</tr>
 									<tr>
 										<td>carousel</td>
 										<td>Object</td>
 										<td>No</td>
 										<td><i>Object</i></td>
-										<td>
-										Define carousel<br>
-										More in <a href="#tile-configuration-carousel" class="content-link">carousel section</a>
-										</td>
+										<td>Define <a href="#tile-configuration-carousel" class="content-link">carousel</a></td>
 									</tr>
 									<tr>
 										<td>carousel.images</td>
 										<td>Array[string]</td>
 										<td>only for carousel</td>
 										<td><i>empty array</i></td>
-										<td>
-										Carousel images list<br>
-										More in <a href="#tile-configuration-carousel" class="content-link">carousel section</a>
-										</td>
+										<td>Carousel images list</td>
 									</tr>
 									<tr>
 										<td>carousel.time</td>
-										<td>Numeric</td>
+										<td>Number</td>
 										<td>only for carousel</td>
 										<td><i>0</i></td>
 										<td>
 										Carousel time interval<br>
-										must be bigger than 0<br>
-										More in <a href="#tile-configuration-carousel" class="content-link">carousel section</a>
+										must be bigger than 0
 										</td>
 									</tr>
 									<tr>
@@ -206,30 +197,23 @@
 										<td>Object</td>
 										<td>No</td>
 										<td><i>Object</i></td>
-										<td>
-										Define slider<br>
-										More in <a href="#tile-configuration-slider" class="content-link">slider section</a>
-										</td>
+										<td>Define <a href="#tile-configuration-slider" class="content-link">slider</a></td>
 									</tr>
 									<tr>
 										<td>slider.images</td>
 										<td>Array[string]</td>
 										<td>only for slider</td>
 										<td><i>empty array</i></td>
-										<td>
-										Slider images list<br>
-										More in <a href="#tile-configuration-slider" class="content-link">slider section</a>
-										</td>
+										<td>Slider images list</td>
 									</tr>
 									<tr>
 										<td>slider.time</td>
-										<td>Numeric</td>
+										<td>Number</td>
 										<td>only for slider</td>
 										<td><i>0</i></td>
 										<td>
 										Slider time interval<br>
-										must be bigger than 0<br>
-										More in <a href="#tile-configuration-slider" class="content-link">slider section</a>
+										must be bigger than 0
 										</td>
 									</tr>
 									<tr>
@@ -237,10 +221,7 @@
 										<td>String</td>
 										<td>only for slider</td>
 										<td><i>null</i></td>
-										<td>
-										Slide direction<br>
-										More in <a href="#tile-configuration-slider" class="content-link">slider section</a>
-										</td>
+										<td>Slide direction</td>
 									</tr>
 								</tbody>
 							</table>
@@ -248,7 +229,59 @@
 							<h2 id="tile-configuration-size">
 								<a class="section-link" href="#tile-configuration-size">Size</a>
 							</h2>
-							<p data-height="370" data-theme-id="0" data-slug-hash="BLKEwO" data-default-tab="result" data-user="rtCoder" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/rtCoder/pen/BLKEwO/">all tiles sizes</a> by Dawid (<a href="http://codepen.io/rtCoder">@rtCoder</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+							<p>For normal tiles only this is required parameter</p>
+
+							<table>
+								<thead>
+									<tr>
+										<th>Value</th>
+										<th>Size</th>
+										<th>Icon size</th>
+										<th>Image size</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>small</td>
+										<td>70px &times; 70px</td>
+										<td>35px &times; 35px</td>
+										<td>70px &times; 70px</td>
+									</tr>
+									<tr>
+										<td>medium</td>
+										<td>150px &times; 150px</td>
+										<td>100px &times; 100px</td>
+										<td>150px &times; 150px</td>
+									</tr>
+									<tr>
+										<td>wide</td>
+										<td>310px &times; 150px</td>
+										<td>100px &times; 100px</td>
+										<td>310px &times; 150px</td>
+									</tr>
+									<tr>
+										<td>medium</td>
+										<td>310px &times; 310px</td>
+										<td>155px &times; 155px</td>
+										<td>310px &times; 310px</td>
+									</tr>
+								</tbody>
+							</table>
+							<br>
+
+							<h2 id="tile-configuration-icon">
+								<a class="section-link" href="#tile-configuration-icon">Icon</a>
+							</h2>
+							<p data-height="375" data-theme-id="0" data-slug-hash="BLKEwO" data-default-tab="result" data-user="rtCoder" data-embed-version="2" class="codepen"></p>
+
+							<h2 id="tile-configuration-image">
+								<a class="section-link" href="#tile-configuration-image">Image</a>
+							</h2>
+
+							<br>
+							<p data-height="375" data-theme-id="0" data-slug-hash="yaJody" data-default-tab="result" data-user="rtCoder" data-embed-version="2" class="codepen"></p>
+
 					</section>
 				</div>
 			</div>
