@@ -72,8 +72,8 @@
 								You can download the latest version of <a href="https://github.com/rtcoder/Metro-UI-Tiles-plugin/releases/latest" class="content-link">Metro UI Tiles on GitHub</a> or just use links below.
 							</p>
 							<pre>
-							<code class="html">&lt;script src="https://cdn.rawgit.com/rtcoder/Metro-UI-Tiles-plugin/v0.6/js/metro-tiles.js">&lt;/script>
-&lt;link rel="stylesheet" href="https://cdn.rawgit.com/rtcoder/Metro-UI-Tiles-plugin/v0.6/css/metro-tiles.css"></code>
+							<code class="html">&lt;script src="https://cdn.rawgit.com/rtcoder/Metro-UI-Tiles-plugin/v0.6.1/js/metro-tiles.js">&lt;/script>
+&lt;link rel="stylesheet" href="https://cdn.rawgit.com/rtcoder/Metro-UI-Tiles-plugin/v0.6.1/css/metro-tiles.css"></code>
 							</pre>
 
 							<h2 id="getting-started-usage">
@@ -188,7 +188,7 @@
 										<td>only for carousel</td>
 										<td><i>0</i></td>
 										<td>
-										Carousel time interval<br>
+										Carousel time interval in miliseconds<br>
 										must be bigger than 0
 										</td>
 									</tr>
@@ -212,7 +212,7 @@
 										<td>only for slider</td>
 										<td><i>0</i></td>
 										<td>
-										Slider time interval<br>
+										Slider time interval in miliseconds<br>
 										must be bigger than 0
 										</td>
 									</tr>
@@ -306,23 +306,61 @@
 							<h2 id="tile-configuration-effect">
 								<a class="section-link" href="#tile-configuration-effect">Effect</a>
 							</h2>
+<p>
+	effescts:<br>
+	<p>slide:<p>
+	slide-left<br>
+	slide-right<br>
+	slide-top<br>
+	slide-bottom<br>
+	
+	<p>zoomIn:<p>
+	zoomIn-left<br>
+	zoomIn-right<br>
+	zoomIn-top<br>
+	zoomIn-bottom<br>
 
+	<p>zoomOut:<p>
+	zoomOut-left<br>
+	zoomOut-right<br>
+	zoomOut-top<br>
+	zoomOut-bottom<br>
+</p>
 							<br>
-							<!-- <p data-height="375" data-theme-id="0" data-slug-hash="yaJody" data-default-tab="result" data-user="rtCoder" data-embed-version="2" data-preview="true" class="codepen"></p> -->
+							<br>
+							<p data-height="375" data-theme-id="0" data-slug-hash="wzWXPw" data-default-tab="result" data-user="rtCoder" data-embed-version="2" data-preview="true" class="codepen"></p>
 
 							<h2 id="tile-configuration-carousel">
 								<a class="section-link" href="#tile-configuration-carousel">Carousel</a>
 							</h2>
 
 							<br>
-							<!-- <p data-height="375" data-theme-id="0" data-slug-hash="yaJody" data-default-tab="result" data-user="rtCoder" data-embed-version="2" data-preview="true" class="codepen"></p> -->
+
+							<p>
+								To create carousel you have to set type of tile to 'carousel'
+							</p>
+							<p>
+								images parameter is an array of string<br>
+								time parameter allow only number and must be bigger than <i>0</i><br>
+								time is an intervar in miliseconds
+							</p>
+							<p data-height="375" data-theme-id="0" data-slug-hash="gwrjOb" data-default-tab="result" data-user="rtCoder" data-embed-version="2" data-preview="true" class="codepen"></p>
 
 							<h2 id="tile-configuration-slider">
 								<a class="section-link" href="#tile-configuration-slider">Slider</a>
 							</h2>
 
 							<br>
-							<!-- <p data-height="375" data-theme-id="0" data-slug-hash="yaJody" data-default-tab="result" data-user="rtCoder" data-embed-version="2" data-preview="true" class="codepen"></p> -->
+							<p>
+								To create slider you have to set type of tile to 'slider'
+							</p>
+							<p>
+								images parameter is an array of string<br>
+								drection parameter allow only <i>['right', 'left', 'top', 'bottom', 'random']</i><br>
+								time parameter allow only number and must be bigger than <i>0</i><br>
+								time is an intervar in miliseconds
+							</p>
+							<p data-height="375" data-theme-id="0" data-slug-hash="amkjNR" data-default-tab="result" data-user="rtCoder" data-embed-version="2" data-preview="true" class="codepen"></p>
 					</section>
 				</div>
 			</div>
