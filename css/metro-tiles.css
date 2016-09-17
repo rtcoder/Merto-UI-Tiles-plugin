@@ -529,23 +529,23 @@
 
 
 
-.tile-wide.zoomEffect.zoomInLeft .tile-content .tile-describe,
-.tile-wide.zoomEffect.zoomOutLeft .tile-content .tile-describe{
+.tile-large.zoomEffect.zoomInLeft .tile-content .tile-describe,
+.tile-large.zoomEffect.zoomOutLeft .tile-content .tile-describe{
 	margin-left: -310px;
 }
 
-.tile-wide.zoomEffect.zoomInRight .tile-content .tile-describe,
-.tile-wide.zoomEffect.zoomOutRight .tile-content .tile-describe{
+.tile-large.zoomEffect.zoomInRight .tile-content .tile-describe,
+.tile-large.zoomEffect.zoomOutRight .tile-content .tile-describe{
 	margin-left: 310px;
 }
 
-.tile-wide.zoomEffect.zoomInTop .tile-content .tile-describe,
-.tile-wide.zoomEffect.zoomOutTop .tile-content .tile-describe{
+.tile-large.zoomEffect.zoomInTop .tile-content .tile-describe,
+.tile-large.zoomEffect.zoomOutTop .tile-content .tile-describe{
 	margin-top: 310px;
 }
 
-.tile-wide.zoomEffect.zoomInBottom .tile-content .tile-describe,
-.tile-wide.zoomEffect.zoomOutBottom .tile-content .tile-describe{
+.tile-large.zoomEffect.zoomInBottom .tile-content .tile-describe,
+.tile-large.zoomEffect.zoomOutBottom .tile-content .tile-describe{
 	margin-top: -310px;
 }
 
