@@ -20,4 +20,8 @@ $(document).ready(function(){
 			clearInterval(inter)
 		}
 	},1)
+
+	$('a.content-link').click(function(e){
+		e.preventDefault();
+	})
 })
